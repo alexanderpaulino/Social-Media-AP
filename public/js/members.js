@@ -205,6 +205,24 @@ if(data.interest4 == "Music"){
 
 });
 
+//User Search button
+$("#search-btn").on('click', function(event){
+    event.preventDefault();
+    var input = $('user-search').val();
+    // var filter = inpiut.toLowerCase();
+
+    $.get('/api/signup', function(req, res){
+      db.Users.findAll({
+        where: {
+          name: input
+        }
+      });
+      console.log(res);
+    $('.modal-search').append($('<li>' + res + '</li>'));
+    })
+  
+  })
+
 //toggle effect when clicking 
 $(".flip").click(function(){
   if (flipped == false){
