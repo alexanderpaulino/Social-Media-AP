@@ -218,7 +218,25 @@ $(".flip").click(function(){
 
     if (data.length !== 0) {
       for (var i = 0; i < data.length; i++) {
-          $('#messages').append($('<li>').html(moment(data[i].created_at).format("(h:mm a) ")+data[i].author+": "+data[i].body));
+
+        if(data[i].body.indexOf('http') > -1){
+          var startLink = data[i].body.indexOf('http');
+          var endOfLink = data[i].body.indexOf(' ', startLink);
+            if (endOfLink < startLink){
+              var url = data[i].body.substring(startLink);
+              var link = url.link(url);
+            data[i].body = data[i].body.replace(url, link);
+            }   else {
+              var url = data[i].body.substring(startLink, endOfLink);
+              var link = url.link(url);
+              data[i].body = data[i].body.replace(url, link);
+            }
+          $('#messages').append($('<li>').html(moment(data[i].created_at).tz("America/New_York").format("(h:mm a) ")+data[i].author+ ": "+data[i].body));
+          $("#messages").animate({scrollTop: $("#messages").prop('scrollHeight')}, 50);
+        }
+        else
+          
+          $('#messages').append($('<li>').html(moment(data[i].created_at).tz("America/New_York").format("(h:mm a) ")+data[i].author+ ": "+data[i].body));
           $("#messages").animate({scrollTop: $("#messages").prop('scrollHeight')}, 50);
         }
       }
@@ -228,7 +246,7 @@ $(".flip").click(function(){
 
     if (data.length !== 0) {
       for (var i = 0; i < data.length; i++) {
-          $("#link-repo").prepend($('<li style="list-style-type: none">').html(moment(data[i].created_at).format("(h:mm a) ")+data[i].author+": <a target='_blank' href="+data[i].body+">"+data[i].body+"</a>"));
+          $("#link-repo").prepend($('<li style="list-style-type: none">').html(moment(data[i].created_at).tz("America/New_York").format("(h:mm a) ")+data[i].author+": <a target='_blank' href="+data[i].body+">"+data[i].body+"</a>"));
           linkList.push(data[i]);
         }
       }
