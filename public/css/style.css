@@ -70,10 +70,6 @@ background: linear-gradient(to bottom right, #31708e, #8Fc1e3);
   bottom: 0;
 }
 
-.member-name{
-  font-size:25px;
-}
-
 #submit-btn{
   margin: 0 25px 0 5px;
 }
@@ -126,7 +122,7 @@ background: linear-gradient(to bottom right, #31708e, #8Fc1e3);
 /* ============== User info section ===============*/
 #member-info{
   background:#9bb3c6;
-  padding: 10px 0 20px 30px;
+padding: 10px 0 20px 30px;
 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
 min-height: 375px;
 }
@@ -152,7 +148,6 @@ min-height: 375px;
   float:right;
   font-size:10px;
 }
-
 
 /* =================FEED AREA======================*/
 #feed-container{
