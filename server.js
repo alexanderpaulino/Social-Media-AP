@@ -12,7 +12,8 @@ MySQLStore = require('connect-mysql')(session),
       config: {
         user: 'o3rml8apjwxy1c69', 
         password: "b5j56j8qm4jveqru", 
-        database: 'qwfswbdemftjim30' 
+        database: 'qwfswbdemftjim30',
+        host: "thh2lzgakldp794r.cbetxkdyhwsb.us-east-1.rds.amazonaws.com" 
       }
     };
 
