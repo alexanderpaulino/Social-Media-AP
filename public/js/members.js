@@ -246,7 +246,7 @@ $(".flip").click(function(){
 
     if (data.length !== 0) {
       for (var i = 0; i < data.length; i++) {
-          $("#link-repo").prepend($('<li style="list-style-type: none">').html(moment(data[i].created_at).format("(h:mm a) ")+data[i].author+": <a target='_blank' href="+data[i].body+">"+data[i].body+"</a>"));
+          $("#link-repo").prepend($('<li class="link'+i+'" style="list-style-type: none">').html(moment(data[i].created_at).format("(h:mm a) ")+data[i].author+": <a target='_blank' href="+data[i].body+">"+data[i].body+"</a>"));
           linkList.push(data[i]);
         }
       }
