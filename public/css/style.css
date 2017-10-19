@@ -121,10 +121,14 @@ background: linear-gradient(to bottom right, #31708e, #8Fc1e3);
 
 /* ============== User info section ===============*/
 #member-info{
-  background:#9bb3c6;
-padding: 10px 0 20px 30px;
-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
-min-height: 375px;
+  padding: 0 0 30px 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+  min-height: 385px;
+  background: white;
+  background: b-wekit-linear-gradient(bottom right, #026670 ), rgba(255, 255, 255, 1));
+  background: -o-linear-gradient(bottom right, #31708e , #8Fc1e3 );
+  background: -moz-linear-gradient(bottom right, #31708e , #8Fc1e3 );
+  background: linear-gradient(to bottom right, #31708e , #8Fc1e3 );
 }
 
 #user-name{
