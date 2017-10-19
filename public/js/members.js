@@ -229,6 +229,7 @@ $(".flip").click(function(){
     if (data.length !== 0) {
       for (var i = 0; i < data.length; i++) {
           $("#link-repo").prepend($('<li style="list-style-type: none">').html(moment(data[i].created_at).format("(h:mm a) ")+data[i].author+": <a target='_blank' href="+data[i].body+">"+data[i].body+"</a>"));
+          linkList.push(data[i]);
         }
       }
     });
@@ -363,7 +364,7 @@ $('#post-submit').on('click', function(event) {
     var input = $('#link-repo-searchbar').val();
    
     if (linkList.length < 1) {
-      alert('nothing to search!');
+     
       return false;
     }
     var filter = input.toLowerCase();
@@ -372,8 +373,8 @@ $('#post-submit').on('click', function(event) {
     var messageLink;
       for (var i = 0; i < linkList.length; i++) {
         
-        var name = linkList[i].name.toLowerCase();
-        var messageLink = linkList[i].link.toLowerCase();
+        var name = linkList[i].author.toLowerCase();
+        var messageLink = linkList[i].body.toLowerCase();
         var targetLink;
         if (name.indexOf(filter) > -1 || messageLink.indexOf(filter) > -1) {
     
@@ -386,5 +387,9 @@ $('#post-submit').on('click', function(event) {
       }
 
   });
+
+  $('#searchMsgBtn').on('click', function(event){
+    event.preventDefault();
+  })
 
 }); //End doc ready
